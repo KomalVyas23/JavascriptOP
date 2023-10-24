@@ -7,3 +7,20 @@ Let's say, an object dog belongs to some other codebase, then its unsafe to add 
 Symbols are accessible using bracket notation only. Because they are used to create hidden properties of an object.
 
 Symbols are ignored in for in loop.
+
+
+MCQ:
+const sym1 = Symbol("one");
+const sym2 = Symbol("one");
+
+const sym3 = Symbol.for("two");
+const sym4 = Symbol.for("two");
+
+console.log(sym1 === sym2, sym3 === sym4);
+
+O/P:
+false, true
+
+Symbol is a built-in object whose constructor returns a symbol primitive — also called a Symbol value or just a Symbol — that's guaranteed to be unique.
+
+Because, The Symbol.for() static method searches for existing symbols in a runtime-wide symbol registry with the given key and returns it if found. Otherwise a new symbol gets created in the global symbol registry with this key.
