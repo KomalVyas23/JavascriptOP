@@ -1,0 +1,9 @@
+A JavaScript Symbol is a primitive datatype just like Number, String, or Boolean.
+
+It represents a unique "hidden" identifier that no other code can accidentally access. This is the sole reason, why symbols are used.
+
+Let's say, an object dog belongs to some other codebase, then its unsafe to add fields inside that object, because we might affect pre-defined behaviour in codebase.
+
+Symbols are accessible using bracket notation only. Because they are used to create hidden properties of an object.
+
+Symbols are ignored in for in loop.
