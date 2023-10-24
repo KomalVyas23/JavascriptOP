@@ -1,0 +1,52 @@
+What will be the output?
+
+async function getData() {
+ return await Promise.resolve('I made it!');
+}
+
+const data = getData();
+console.log(data);
+
+// Promise: pending
+
+Explaination:
+In the code you provided, you have defined an async function called getData that returns a resolved promise with the value 'I made it!'. However, you are calling this function and storing the result in the variable data, and then immediately logging the value of data.
+
+Here's what happens in your code:
+
+You define the getData function, which returns a resolved promise with the value 'I made it!'. The await keyword is used, but since the promise is already resolved, it has no practical effect in this context.
+
+You call the getData function and assign the returned promise to the data variable.
+
+You immediately log the data variable to the console.
+
+Since getData is an asynchronous function that returns a promise, when you log data immediately after calling getData, you won't see the resolved value of the promise, but rather the promise itself. Therefore, what you'll see in the console is not the string 'I made it!', but rather a Promise object.
+
+If you want to log the resolved value of the promise, you should use await or .then() to handle the promise like this:
+
+Using await:
+
+javascript
+Copy code
+async function getData() {
+  return await Promise.resolve('I made it!');
+}
+
+async function logData() {
+  const data = await getData();
+  console.log(data);
+}
+
+logData();
+Using .then():
+
+javascript
+Copy code
+function getData() {
+  return Promise.resolve('I made it!');
+}
+
+getData().then(data => {
+  console.log(data);
+});
+Both of these approaches will ensure that you log the resolved value of the promise, which is 'I made it!'.
