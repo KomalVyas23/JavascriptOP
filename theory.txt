@@ -1,0 +1,14 @@
+Shallow Copy:  Only the first level of the Object is copied. Deeper levels are referenced.
+  -> Shallow copy can be achieved using Object.assign() OR spread operator(...)
+  -> After updating the first level of the cloned object, the original object property is not changed.
+  -> After updating the deeper level of the cloned object, the original object property gets changed. This is because, deeper levels are referenced.
+
+Deep Copy: All the levels of objects are copied. This is true copy of an object.
+  -> Can be achieved using JSON.parse()+ JSON.stringify()
+  -> After updating the first level of the cloned object, the original object property is not changed.
+  -> After updating the deeper level of the cloned object, the original object property is not changed. This is because, deeper levels are also copied.
+
+Performance:
+  -> Shallow copies are faster than deep copies.
+  -> If the depth of your object is equal to one, use a shallow copy.
+  -> If the depth of your object is bigger than one, use a deep copy.
